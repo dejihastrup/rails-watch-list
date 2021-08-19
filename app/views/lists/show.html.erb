@@ -1,0 +1,17 @@
+<h2><%= @list.name %></h2>
+  <% @list.bookmarks.each do |bookmark| %>
+  <div class="card-trip">
+    <img id="banner" src="<%= bookmark.movie.poster_url %>"/>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= bookmark.movie.title %> • <span style="font-weight:lighter"><%= bookmark.movie.rating %></span></h2><img src="/Users/dejihastrup/code/dejihastrup/rails-watch-list/app/assets/images/star.png" alt="star">
+        <p><%= bookmark.movie.overview %></p>
+        <br>
+        <h4><img ><%= bookmark.comment %></h4>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<%= link_to "Create a new bookmark", bookmarks_new_list_path %><br>
+<%= link_to "Back to lists", lists_path%>
